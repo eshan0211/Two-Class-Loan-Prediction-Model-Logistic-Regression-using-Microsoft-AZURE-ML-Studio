@@ -1,5 +1,7 @@
 # Two-Class-Loan-Prediction-Model-Logistic-Regression-using-Microsoft-AZURE-ML-Studio
 - We will try to identify if the loan application gets approved or not.
+- Sign in to your Microsoft azure account. ( you can make a free trial account for a month [here](https://azure.microsoft.com/en-in/free/search/?&ef_id=CjwKCAjwlrqHBhByEiwAnLmYUA_xQpYpL-GyL0_xeq6PiMMIEJoCUSsH0t9AEomzarx65DD4luwkcBoCEUoQAvD_BwE:G:s&OCID=AID2200195_SEM_CjwKCAjwlrqHBhByEiwAnLmYUA_xQpYpL-GyL0_xeq6PiMMIEJoCUSsH0t9AEomzarx65DD4luwkcBoCEUoQAvD_BwE:G:s&gclid=CjwKCAjwlrqHBhByEiwAnLmYUA_xQpYpL-GyL0_xeq6PiMMIEJoCUSsH0t9AEomzarx65DD4luwkcBoCEUoQAvD_BwE) but will also have to add your credit card details)
+- We will use the [Microsoft Azure Machine learning studio](https://studio.azureml.net) which is great for beginners.
 
 ## 1)Visualising the dataset : 
    - Upload the dataset in Azure ML Studio by selecting the `NEW` option.
