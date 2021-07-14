@@ -27,6 +27,49 @@
    - Now you can run the experiment and visualise the data. (no missing values)
    - <img width="1238" alt="Screen Shot 2021-07-15 at 12 27 14 AM" src="https://user-images.githubusercontent.com/55271617/125677337-893d8299-5dcc-4215-b031-0641771b5bdc.png">
    
-   ## 3)Replacing the Missing Values :
+   ## 3)Selecting Features (Columns) :
+- Drag and drop the `select columns in dataset`module in your workspace.
+- Select every column except the `Loan ID` cause its just a random unique number.
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 25 15 AM" src="https://user-images.githubusercontent.com/55271617/125684590-648f89db-b32b-4b0d-b6c2-833b08a48602.png">
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 23 33 AM" src="https://user-images.githubusercontent.com/55271617/125684410-3fdbda7a-440d-491d-a813-04a6171e807d.png">
+
+## 4)Splitting Data :
+We will split the existing data and use part of the data for training our model and the rest for testing the result as well as validating the results for accuracy.
+- Drag and drop the `split data` module.
+- We will split the data in 70:30 ratio and lets do the [stratified split](https://stats.stackexchange.com/questions/250273/benefits-of-stratified-vs-random-sampling-for-generating-training-data-in-classi) on the column, `loan status` so that we have even distribution of values between train and test dataset.
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 34 50 AM" src="https://user-images.githubusercontent.com/55271617/125685701-b4524d1f-ae29-47c6-92b0-ccc60f85b129.png">
+- Now Run the `split data` module and visulaise the two output nodes.(one has 70 percent data and one 30 percent)
+
+## 5)Training and scoring our two-class Logistic Regression Model :
+We are going to predict an outcome that's either yes or no, which means that we are only predicting two classes, so we will use two-class logistic regression.
+- Drag and drop the `Two- Class Logistic Regression` Model, we will use the defualt parameters but you can also change the parameters and visualise the change in results with different values of parameters.
+- For training our model, drag and drop the `train model` module (selecting loan status as the column selector) and connect them as shown below.
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 43 55 AM" src="https://user-images.githubusercontent.com/55271617/125686744-ce0d65c7-d0c8-4dc0-9d6b-5d7650369b8e.png">
+- The model is ready to be trained, we want to score the algorithm on our test dataset and see how it performs. So the module that is required for the same is called as a score model, which is basically a validation module for our trained algorithm. So let's search for it and drag and drop it hereand as you will see, it requires 2 inputs. The first one is the train model which is nothing but the output from the train model module and the test dataset.
+- So we provide the connection of our train model as well as the test dataset. The test dataset is coming from the second node of split module. Now, let's right click on it and run selected. It will run all the previous steps that have not been executed so far.
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 48 09 AM" src="https://user-images.githubusercontent.com/55271617/125687248-17500f33-227c-4275-b6cb-44ff6294dd22.png">
+- Now we can visualise the output.
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 49 36 AM" src="https://user-images.githubusercontent.com/55271617/125687427-80e94824-8b73-4690-94e4-c5411c97c0f2.png">
+- As you can see, there are two additional columns called scored label and score probabilities, scored label is the predicted value of that particular set of features or rows and score probability is the probability with which this particular value has been predicted.
+
+## 6)Evaluating our model :
+Lets visualize these results in a bit more structured manner.
+- We will use a module called `evaluate model` for evaluating our results.
+- It takes 2 nodes which are for evaluating different models. The second one is optional and let's connect our scored model to the first node and run it.
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 55 08 AM" src="https://user-images.githubusercontent.com/55271617/125688132-92794f67-c1a9-427b-97ee-292ccaf55732.png">
+- After visulising the output, we can say the accuracy is around `83%` and the AUC i.e area under thecurve is also very high which means that the model is a very good model.
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 58 11 AM" src="https://user-images.githubusercontent.com/55271617/125688531-6bf6b3ab-0e53-4335-a042-ca8564ddbe7d.png">
+- <img width="500" alt="Screen Shot 2021-07-15 at 1 58 20 AM" src="https://user-images.githubusercontent.com/55271617/125688549-7fb5c912-7c0b-4a12-93ed-cb2b0ae2e2b4.png">
+
+Similarly we can also use multi class logistic regression, if we have to categorise our result in more than 2 values, for eg marks in class can be categorised as high, average and low.
+
+##Thank You, Hope the explanation was clear and to the point !
+
+
+
+
+
+
+
 
 
