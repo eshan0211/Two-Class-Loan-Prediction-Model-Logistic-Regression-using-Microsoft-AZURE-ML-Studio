@@ -1,0 +1,1 @@
+# Two-Class-Loan-Prediction-Model-Logistic-Regression-using-Microsoft-AZURE-ML-Studio
